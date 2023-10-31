@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>Szczęść Boże {{registration.communication.nameVocative}}!</p>
+
+<p>Przykro nam, że zdecydowaliście się <b> wypisać </b> z&nbsp;<strong>{{turnus.name}},</strong> kt&oacute;re organizujemy<br />
+w&nbsp; <b>{{turnus.host.name}}</b>, {{turnus.host.address}}<br />
+w dniach <b>{{formatDate turnus.date.start}} -&nbsp;{{formatDate turnus.date.end}}</b></p>
+
+<div>Niniejszy mail jest potwierdzeniem wypisania z listy uczestnik&oacute;w następujące&nbsp;osoby:</div>
+
+<div>
+<ul>
+	{{#each registration.adults}}
+	<li>{{this.name}}</li>
+	{{/each}} {{#each registration.children}}
+	<li>{{this.name}}</li>
+	{{/each}}
+</ul>
+</div>
+
+<div>{{turnus.email.additionalMessage}}</div>
+
+<div>
+<p style="line-height: 108%; margin-bottom: 0.28cm">Zapraszamy w przyszłym roku <font face="Segoe UI Emoji, serif">😊</font></p>
+</div>
+
+<p>
+  {{turnus.email.signedBy}}
+</p>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>Szczęść Boże {{registration.communication.nameVocative}}!</p>
+
+<p>Bardzo dziękujemy za wpłate kwoty<strong> {{additionalContext.paidValue}} zł</strong> na&nbsp;<strong>{{turnus.name}},</strong> kt&oacute;re odbęda się w dniach <b>{{formatDate turnus.date.start}} -&nbsp;{{formatDate turnus.date.end}}.</b><br />
+<br />
+
+
+{{#if registration.finanse.reminingToBePaid includeZero=false}}
+   <br /> Do zapłaty pozostaje kwota:<strong>&nbsp; {{registration.finanse.reminingToBePaid}} zł.</strong><br />
+{{else}}
+   <br /> Całość kwoty należności jest uregulowana - Dziękujemy. <br />
+{{/if}}
+
+<br />
+
+<div>
+{{turnus.email.additionalMessage}}
+</div>
+
+<br />
+
+<p>
+  {{turnus.email.signedBy}}
+</p>
+
+</body>
+</html>

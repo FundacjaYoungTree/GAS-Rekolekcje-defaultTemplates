@@ -1,7 +1,19 @@
 {
   "timeZone": "Europe/Warsaw",
   "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "CommunicationLib",
+        "version": "0",
+        "libraryId": "19wfov0qaNaAjxgxiVhaBhPCw4A3XvXRZMYXDAKWZZtrKXTBb600cV1Jy",
+        "developmentMode": true
+      }
+    ]
   },
   "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "V8"
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/script.send_mail"
+  ]
 }
