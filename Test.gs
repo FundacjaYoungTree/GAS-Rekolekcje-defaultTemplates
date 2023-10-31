@@ -5,7 +5,7 @@ function test() {
      "email/Podziekowanie_za_wplate",
      "email/Podziekowanie_za_wplate_zaliczki_i_potwierdzenie_przyjecia",
      "email/Potwierdzenie_anulowania_uczestnictwa",
-     "email/Potwierdzenie_przeniesienia_na liste_podstawowa_i_prosba_o_zaliczke",
+     "email/Potwierdzenie_przeniesienia_na_liste_podstawowa_i_prosba_o_zaliczke",
      "email/Potwierdzenie_przyjecia_i_prosba_o_zaliczke",
      "email/Potwierdzenie_przyjecia_na_liste_rezerwowa",
      "email/Potwierdzenie_otrzymania_zgloszenia",
