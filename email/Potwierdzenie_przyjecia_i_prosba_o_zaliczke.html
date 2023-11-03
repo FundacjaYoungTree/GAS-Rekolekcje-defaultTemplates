@@ -13,31 +13,33 @@
 Całkowity koszt uczestnictwa wynosi:  {{registration.finanse.totalExpectedIncome}} zł. Obejmuje ona osoby:
 <ul>
 	{{#each registration.adults}}
-	    <li>{{this.name}} - {{this.income.value}} zł - {{this.income.description}} </li>
+	<li>{{this.name}} - {{this.income.value}} zł - {{this.income.description}} </li>
 	{{/each}} {{#each registration.children}}
-    	<li>{{this.name}} - {{this.income.value}} zł - {{this.income.description}} </li>
+	<li>{{this.name}} - {{this.income.value}} zł - {{this.income.description}} </li>
 	{{/each}}
 </ul>
 </div>
 
 {{#if registration.finanse.reminingToBePaid includeZero=false}}
-   Do zapłaty pozostaje kwota:<strong>&nbsp; {{registration.finanse.reminingToBePaid}} zł.</strong> &nbsp;</p>
-{{else}}<br />
-  <strong>Uregulowano całość należności, dziękujemy.</strong><br />
+    <br /> Do zapłaty pozostaje kwota:<strong>&nbsp; {{registration.finanse.reminingToBePaid}} zł.</strong> &nbsp;<br/>
+{{else}}
+    <br /><strong>Uregulowano całość należności, dziękujemy.</strong><br />
 {{/if}}
 
-
 {{#if registration.finanse.expectedAdvancePayment includeZero=false}}
-      Prosimy o wpłatę zadatku na wysokości {{registration.finanse.expectedAdvancePayment}} zł  w ciągu 3 dni od dnia otrzymania niniejszej wiadomości w celu potwierdzenia faktycznej chęci przyjazdu i zawarciu obie strony umowy.
+      <br />
+
+      <b> Prosimy o wpłatę zadatku na wysokości {{registration.finanse.expectedAdvancePayment}} zł  w ciągu 3 dni </b> od dnia otrzymania niniejszej wiadomości w celu potwierdzenia faktycznej chęci przyjazdu i zawarciu obie strony umowy.
 
       <br />
 
       <p>Dane do przelewu:<br />
 
-      <b>{{turnus.organizer.finanse.legalName}}</b><br />
-      {{turnus.organizer.finanse.bankName}} {{turnus.organizer.finanse.bankAccountNumber}}<br />
-      <b>Tytułem:</b> {{turnus.id}} - {{registration.name}}</p>
-
+          <b>{{turnus.organizer.finanse.legalName}}</b><br />
+          {{turnus.organizer.finanse.bankName}} {{turnus.organizer.finanse.bankAccountNumber}}<br />
+          <b>Tytułem:</b> {{turnus.id}} - {{registration.name}}
+          
+      </p>
 {{/if}}
 
 
