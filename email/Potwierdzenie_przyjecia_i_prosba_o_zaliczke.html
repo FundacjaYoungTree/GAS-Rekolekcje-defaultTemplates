@@ -20,6 +20,12 @@ Całkowity koszt uczestnictwa wynosi:  {{registration.finanse.totalExpectedIncom
 </ul>
 </div>
 
+{{#if registration.finanse.specialIncomeAgreed}}
+    <br /> Kwota różna od cennikowej, z powodu: {{registration.finanse.specialIncomeAgreed.noteForUser}} <br/>
+{{/if}}
+
+
+
 {{#if registration.finanse.reminingToBePaid includeZero=false}}
     <br /> Do zapłaty pozostaje kwota:<strong>&nbsp; {{registration.finanse.reminingToBePaid}} zł.</strong> &nbsp;<br/>
 {{else}}

@@ -20,10 +20,14 @@ Koszt cząstkowy uczestnictwa wynosi:</p>
 	{{/each}}
 </ul>
 </div>
-{{#if registration.finanse.specialIncomeAgreed}}
 
+  
 <div>Łączny koszt uczestnictwa wynosi <b>{{registration.finanse.totalExpectedIncome}} zł.</b></div>
+
+{{#if registration.finanse.specialIncomeAgreed}}
+    <br /> Kwota różna od cennikowej, z powodu: {{registration.finanse.specialIncomeAgreed.noteForUser}} <br/>
 {{/if}}
+
 
 <div>&nbsp;</div>
 {{#if registration.finanse.reminingToBePaid includeZero=false}}
