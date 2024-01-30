@@ -5,12 +5,13 @@
 <body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.1132.0">
 <p>Szczęść Boże {{registration.communication.nameVocative}}!</p>
 
-<p>Bardzo się cieszymy, że zdecydowaliście się na wyjazd z nami na <strong>{{turnus.name}},</strong>&nbsp;kt&oacute;re organizujemy<br />
+<p>Nasz wspólny na <strong>{{turnus.name}},</strong>&nbsp;kt&oacute;re organizujemy 
 w&nbsp;&nbsp;<b>{{turnus.host.name}}</b>, {{turnus.host.address}}<br />
-w dniach&nbsp;<b>{{formatDate turnus.date.start}}-&nbsp;{{formatDate turnus.date.end}}</b><br />
-<br />
-Koszt cząstkowy uczestnictwa wynosi:</p>
-
+w dniach&nbsp;<b>{{formatDate turnus.date.start}}-&nbsp;{{formatDate turnus.date.end}}</b> już bardzo niedługo.
+Już się cieszymy ze wspólnego spotkania.<br>
+Abyśmy mogli dopiąć wszystko na ostatni guzik prosimy o uregulowanie pozostałej do zapłaty kwoty.
+<br /> </p>
+<p>Koszt cząstkowy uczestnictwa wynosi:
 <div>
 <ul>
 	{{#each registration.adults}}
@@ -20,36 +21,39 @@ Koszt cząstkowy uczestnictwa wynosi:</p>
 	{{/each}}
 </ul>
 </div>
+</p>
 
-  
 <div>Łączny koszt uczestnictwa wynosi <b>{{registration.finanse.totalExpectedIncome}} zł.</b></div>
 
-{{#if registration.finanse.specialIncomeAgreed}}
+{{#if registration.finanse.specialIncomeAgreed.noteForUser}}
     <br /> Kwota różna od cennikowej, z powodu: {{registration.finanse.specialIncomeAgreed.noteForUser}} <br/>
 {{/if}}
 
 
-<div>&nbsp;</div>
+<div>
 {{#if registration.finanse.reminingToBePaid includeZero=false}}
 
-<div>Prosimy o wpłatę:&nbsp;&nbsp;<b>{{registration.finanse.reminingToBePaid}} zł&nbsp;</b><br /><br />
-Dane do przelewu:<br />
-<b>{{turnus.organizer.finanse.legalName}}</b><br />
-{{turnus.organizer.finanse.bankName}} {{turnus.organizer.finanse.bankAccountNumber}}<br />
-<b>Tytułem:</b> {{turnus.id}} - {{registration.name}}</div>
+  <div>Do zapłaty pozostaje kwota <b>{{registration.finanse.reminingToBePaid}} zł&nbsp;</b>, prosimy o jej wpłatę w ciągu 5 dni.<br /></div>
+
+  {{#if registration.finanse.paymentLink includeZero=false}}
+     <div>Aby dokonać płatności - kliknij w link&nbsp;<a href="{{registration.finanse.paymentLink}}"><b>{{registration.finanse.paymentLink}}</b></a></div>
+  {{/if}}
+
+  {{#unless  registration.finanse.paymentLink includeZero=false}}
+  Dane do przelewu:<br />
+  <b>{{turnus.organizer.finanse.legalName}}</b><br />
+  {{turnus.organizer.finanse.bankName}} {{turnus.organizer.finanse.bankAccountNumber}}<br />
+  <b>Tytułem:</b> {{turnus.id}} - {{registration.name}}
+  {{/unless }}
+
+{{else}}
+   Całośc kwoty została już uregulowana, dziękujemy!
 {{/if}}
 
-<div>&nbsp;</div>
-{{#if registration.finanse.paymentLink includeZero=false}}
-
-<div>Aby dokonać płatności - kliknij w link&nbsp;<a href="{{registration.finanse.paymentLink}}"><b>{{registration.finanse.paymentLink}}</b></a> {{else}}&nbsp;
-
-<div>&nbsp;</div>
-{{/if}}
-
-<div>&nbsp;</div>
+</div>
+<br/>
 
 <div>{{turnus.email.signedBy}}</div>
 </div>
-<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></body>
+</body>
 </html>

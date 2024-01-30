@@ -30,10 +30,11 @@ function test() {
 
 
 
-   const testCtx =  {}
-
+   
    const result = testFiles.map ( testFileName=> {        
         console.info(`Testing: ${testFileName}`)
+        const testCtx =  getContextForFileName(testFileName)
+
         const bodyTemplate = HtmlService.createHtmlOutputFromFile(testFileName).getContent();
         return `<br><br><h2>----- ${testFileName} ----------</h2><br><br>` + CommunicationLib.Handlebars.compile(bodyTemplate)(testCtx);
    }).join("<br><br>------------------------------------------<br><br>")
