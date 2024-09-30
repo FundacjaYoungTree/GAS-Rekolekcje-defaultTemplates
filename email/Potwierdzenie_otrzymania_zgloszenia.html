@@ -5,23 +5,12 @@
 <body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.1132.0">
 <p>Szczęść Boże {{registration.communication.nameVocative}}!</p>
 
-<p>Bardzo się cieszymy, że będziecie z nami na <strong>{{turnus.name}},</strong> kt&oacute;ry&nbsp;odbędzie&nbsp;się w dniach <b>{{formatDate turnus.date.start}} -&nbsp;{{formatDate turnus.date.end}}.</b><br />
+<p>Bardzo dziękujemy za zgłoszenie na <strong>{{turnus.name}},</strong> kt&oacute;ry&nbsp;odbędzie&nbsp;się w dniach <b>{{formatDate turnus.date.start}} -&nbsp;{{formatDate turnus.date.end}}.</b><br />
 <br />
-{{#if registration.finanse.reminingToBePaid includeZero=false}}<br />
-Potwierdzamy przyjęcię&nbsp;na listę&nbsp;uczestnik&oacute;w.&nbsp;<br />
-<br />
-Aby, potwierdzić Wasz udział, opłać zaliczkę w wysokości {{registration.finanse.expectedAdvancePayment}}<br />
-&nbsp;<br />
-Do zapłaty pozostaje kwota:<strong>&nbsp; {{registration.finanse.reminingToBePaid}} zł.</strong> &nbsp;</p>
 
-<p>Dane do przelewu:<br />
-<b>{{turnus.organizer.finanse.legalName}}</b><br />
-{{turnus.organizer.finanse.bankName}} {{turnus.organizer.finanse.bankAccountNumber}}<br />
-<b>Tytułem:</b> {{turnus.id}} - {{registration.name}}</p>
-{{else}}<br />
-<strong>Uregulowano całość należności, dziękujemy.</strong><br />
-{{/if}}
-<p><br />
+Przetwarzamy Wasze zgłoszenie, niebawem otrzymacie informacje o przyjęciu oraz wyliczenie należności{{#if registration.finanse.expectedAdvancePayment includeZero=false}} poprosimy Was też o wpłatę zaliczki {{/if}}.
+
+<br />
 {{turnus.email.additionalMessage}}</p>
 
 <div>&nbsp;</div>
